@@ -18,7 +18,6 @@ for x in json_data['study_list'] :
 ## get newick strings for all trees in synthesis
 newicks = {}
 for key, val in study_tree.items() :
-
 	url = "".join(['http://api.opentreeoflife.org/phylesystem/v1/study/',key,'/tree/tree',val,'.tre'])
 	response = requests.get(url)
 	clean_newick = re.sub(r'\[.*?\]', '', response.text) # removes ingroup labels
